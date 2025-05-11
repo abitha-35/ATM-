@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Withdraw Amount - Page 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 16px;
+      color: #34495e;
+      margin-bottom: 12px;
+    }
+
+    strong {
+      color: #2c3e50;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+    }
+
+    .home-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .home-button:hover {
+      background-color: #1abc9c;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Account Details</h2>
+    <p><strong>Account Number:</strong> {{accno}}</p>
+    <p><strong>Name:</strong> {{name}}</p>
+    <p><strong>Email:</strong> {{email}}</p>
+    <p><strong>Balance:</strong> ₹{{balance}}</p>
+
+    <button class="btn" type="submit">Submit</button>
+    <a href="/home" class="home-button">Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PIN Generation - Step 2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #34495e;
+      font-weight: normal;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #34495e;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #27ae60;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #219150;
+    }
+
+    .home-button {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #2c3e50;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: #1abc9c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Create Your PIN</h2>
+    <h3>Account Number: {{ accno }}</h3>
+    <form action="/pingeneration3" method="POST">
+      <input type="hidden" name="accno" value="{{accno}}">
+      
+      <label for="pin">Enter PIN:</label>
+      <input type="password" id="pin" name="pin" required>
+
+      <label for="confirmPin">Confirm PIN:</label>
+      <input type="password" id="confirmPin" name="cpin" required>
+
+      <button type="submit">Generate PIN</button>
+      <a href="/home" class="home-button">Home</a>
+    </form>
+  </div>
+
+  <script>
+    var data = "{{msg}}";
+    if (data == "wrongpin") {
+      alert("PIN does not match");
+    } else if (data == "ok") {
+      alert("PIN generated successfully");
+    }
+  </script>
+</body>
+</html>
